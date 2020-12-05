@@ -7,14 +7,13 @@ def main():
     inp = list(map(str, inp_file.read().split("\n\n")))
     # print("Input: " + str(inp) + "\n")
 
-    req_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
-
-    print("Part one: " + str(part_one(inp, req_fields)))
-    print("Part two: " + str(part_two(inp, req_fields)))
+    print("Part one: " + str(part_one(inp)))
+    print("Part two: " + str(part_two(inp)))
 
 
-def part_one(passports, req_fields):
+def part_one(passports):
     valids = 0
+    req_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
     for passport in passports:
         cnt = 0
@@ -29,7 +28,7 @@ def part_one(passports, req_fields):
     return valids
     
 
-def part_two(passports, req_fields):
+def part_two(passports):
     valids = 0
 
     for passport in passports:
